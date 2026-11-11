@@ -32,6 +32,7 @@ Vedi DESIGN.md
   - tabella `survey_responses`: una riga per dipendente con le colonne `q1`…`q5` (testo) e `submitted_at`; vincolo di unicità su `user_id` per impedire doppie compilazioni;
   - Row Level Security attiva con policy di `select` e `insert` limitate alle proprie righe (`auth.uid() = user_id`).
   - Le modifiche allo schema sono applicate come migrazioni tramite l'MCP di Supabase.
+- **Attenzione al progetto Supabase condiviso:** il progetto usato ha già un trigger `on_auth_user_created` che, a ogni nuovo utente, scrive anche in `public.bookclub_users` (residuo di un'altra app). Di conseguenza ogni dipendente che si registra crea una riga in `bookclub_users`: se non è voluto, va rimosso il trigger oppure va usato un progetto Supabase dedicato a questo sondaggio. L'app del sondaggio non usa `bookclub_users` e non ne dipende.
 - Configurazione: `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY` in `.env` (ignorato da git), con esempio in `.env.example`.
 - Tutto il codice che parla con Supabase sta in `src/lib/`: `supabase.js` è l'unico punto di accesso al client, `auth.js` gestisce l'autenticazione e `survey.js` le risposte.
 - I test e2e non usano mai il database reale: intercettano le chiamate a `**/auth/v1/**` e `**/rest/v1/**` e rispondono con dati finti.
