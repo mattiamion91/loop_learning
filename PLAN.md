@@ -15,12 +15,12 @@ Stati delle task (cambiali con `node .agent/loop.mjs task <n> inizia|fatta|error
 - [✔] Pagina di accesso `src/pages/Login.jsx`: form email+password con registrazione e login, stati di caricamento ed errore in italiano
 - [✔] Punti di estensione: rotte dichiarate in `src/App.jsx` (login, questionario, ringraziamento), moduli `lib/` per le funzionalità successive
 
-## M2 — Questionario a 5 domande e salvataggio su Supabase
-- [ ] Le 5 domande a risposta singola definite in `src/lib/questions.js` (testo della domanda e opzioni in italiano)
-- [ ] Migrazione Supabase: tabella `survey_responses` (`q1`…`q5`, `submitted_at`), unicità su `user_id`, RLS attiva con policy select/insert sulle proprie righe
-- [ ] `src/lib/survey.js`: `caricaRispostaUtente()` e `salvaRisposte()`, con controllo di `error` e messaggi comprensibili
-- [ ] Pagina `src/pages/Questionario.jsx`: una domanda per schermata, barra di avanzamento (1/5), radio, Avanti/Indietro, validazione della risposta, pulsante Invia
-- [ ] Pagina `src/pages/Grazie.jsx` di ringraziamento mostrata dopo il salvataggio riuscito
+## M2 — Questionario a 5 domande e salvataggio su Supabase ✔
+- [✔] Le 5 domande a risposta singola definite in `src/lib/questions.js` (testo della domanda e opzioni in italiano)
+- [✔] Migrazione Supabase: tabella `survey_responses` (`q1`…`q5`, `submitted_at`), unicità su `user_id`, RLS attiva con policy select/insert sulle proprie righe
+- [✔] `src/lib/survey.js`: `caricaRispostaUtente()` e `salvaRisposte()`, con controllo di `error` e messaggi comprensibili
+- [✔] Pagina `src/pages/Questionario.jsx`: una domanda per schermata, barra di avanzamento (1/5), radio, Avanti/Indietro, validazione della risposta, pulsante Invia
+- [✔] Pagina `src/pages/Grazie.jsx` di ringraziamento mostrata dopo il salvataggio riuscito
 
 ## M3 — Flusso "già completato", logout e rifiniture
 - [ ] Modifica al routing di `src/App.jsx` e alla pagina Questionario: se l'utente ha già una risposta salvata, viene portato direttamente a Grazie (solo pagina di ringraziamento)

@@ -1,0 +1,74 @@
+.pannello {
+  width: min(46rem, 100%);
+  margin-inline: auto;
+  padding: var(--space-6);
+  background-color: rgba(10, 22, 40, 0.72);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  animation: entra var(--dur-entry) var(--ease-out) both;
+}
+
+.intestazione {
+  margin-bottom: var(--space-4);
+}
+
+.etichetta {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.avanzamento {
+  margin-bottom: var(--space-1);
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.barra {
+  height: 0.5rem;
+  overflow: hidden;
+  background-color: rgba(232, 244, 248, 0.1);
+  border-radius: 999px;
+}
+
+.barraPiena {
+  display: block;
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 999px;
+  transition: width var(--dur-hover) var(--ease-out);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-3);
+}
+
+.errore {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--color-error);
+}
+
+.azioni {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

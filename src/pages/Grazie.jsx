@@ -1,12 +1,15 @@
 import StrutturaPagina from '../components/StrutturaPagina.jsx';
+import styles from './Grazie.module.css';
 
-// Punto di estensione: in M2 questa pagina diventa il ringraziamento finale.
 export default function Grazie() {
   return (
     <StrutturaPagina>
-      <section data-testid="pagina-grazie">
-        <h1>Grazie</h1>
-        <p>Pagina di ringraziamento.</p>
+      <section className={styles.pannello} data-testid="pagina-grazie">
+        <p className={styles.etichetta}>Sondaggio completato</p>
+        <h1 className={styles.titolo}>Grazie per aver partecipato</h1>
+        <p className={styles.testo}>
+          Le tue risposte sono state registrate correttamente. Non serve fare altro: puoi chiudere questa pagina.
+        </p>
       </section>
     </StrutturaPagina>
   );
