@@ -25,6 +25,11 @@
   color: var(--color-primary);
 }
 
+.riquadro h1 {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  letter-spacing: -0.02em;
+}
+
 .sottotitolo {
   color: var(--color-text-muted);
 }

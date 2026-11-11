@@ -55,6 +55,22 @@
   color: var(--color-error);
 }
 
+.avviso {
+  margin: 0 0 var(--space-3);
+  padding: 0.6rem 0.85rem;
+  font-size: var(--text-small);
+  color: var(--color-heading);
+  background-color: rgba(255, 110, 199, 0.1);
+  border: 1px solid rgba(255, 110, 199, 0.4);
+  border-radius: var(--radius-sm);
+}
+
+.centrato {
+  width: min(46rem, 100%);
+  margin-inline: auto;
+  padding: var(--space-6);
+}
+
 .azioni {
   display: flex;
   justify-content: space-between;

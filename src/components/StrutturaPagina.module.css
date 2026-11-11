@@ -1,4 +1,10 @@
 .pagina {
+  display: flex;
+  flex-direction: column;
   min-height: 100dvh;
+}
+
+.contenuto {
+  flex: 1;
   padding-block: var(--space-8);
 }

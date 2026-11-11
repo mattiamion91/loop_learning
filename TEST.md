@@ -16,3 +16,10 @@ Elenco dei test e2e, aggiornato dal loop a ogni esecuzione: non modificarlo a ma
 - [✔] M2 — questionario e salvataggio › chiede una risposta prima di avanzare
 - [✔] M2 — questionario e salvataggio › naviga avanti e indietro mantenendo la scelta
 - [✔] M2 — questionario e salvataggio › invia le risposte e mostra il ringraziamento
+
+## M3 — Flusso "già completato", logout e rifiniture
+- [✔] M3 — già completato, logout e rifiniture › chi ha già compilato vede solo il ringraziamento
+- [✔] M3 — già completato, logout e rifiniture › l’intestazione mostra l’email e l’uscita riporta al login
+- [✔] M3 — già completato, logout e rifiniture › mostra lo stato di caricamento durante la verifica
+- [✔] M3 — già completato, logout e rifiniture › se la verifica fallisce lo segnala e lascia compilare
+- [✔] M3 — già completato, logout e rifiniture › la barra di avanzamento è accessibile e si aggiorna

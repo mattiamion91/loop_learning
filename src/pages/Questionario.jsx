@@ -1,21 +1,40 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DOMANDE } from '../lib/questions.js';
 import { salvaRisposte } from '../lib/survey.js';
 import { messaggioErrore } from '../lib/auth.js';
 import { useAuth } from '../hooks/useAuth.js';
+import { useRispostaEsistente } from '../hooks/useRispostaEsistente.js';
 import StrutturaPagina from '../components/StrutturaPagina.jsx';
 import DomandaCard from '../components/DomandaCard.jsx';
 import Button from '../components/Button.jsx';
+import Caricamento from '../components/Caricamento.jsx';
 import styles from './Questionario.module.css';
 
 export default function Questionario() {
   const { user } = useAuth();
   const navigate = useNavigate();
+  const { caricamento, esistente, errore: erroreVerifica } = useRispostaEsistente(user?.id);
+
   const [indice, setIndice] = useState(0);
   const [risposte, setRisposte] = useState({});
   const [inCorso, setInCorso] = useState(false);
   const [errore, setErrore] = useState('');
+
+  // Chi ha già compilato il sondaggio vede solo la pagina di ringraziamento.
+  useEffect(() => {
+    if (esistente) navigate('/grazie', { replace: true });
+  }, [esistente, navigate]);
+
+  if (caricamento) {
+    return (
+      <StrutturaPagina>
+        <div className={styles.centrato}>
+          <Caricamento testo="Verifica del sondaggio in corso…" />
+        </div>
+      </StrutturaPagina>
+    );
+  }
 
   const totale = DOMANDE.length;
   const domanda = DOMANDE[indice];
@@ -78,10 +97,17 @@ export default function Questionario() {
             aria-valuemin={1}
             aria-valuemax={totale}
             aria-valuenow={indice + 1}
+            aria-valuetext={`Domanda ${indice + 1} di ${totale}`}
           >
             <span className={styles.barraPiena} style={{ width: `${((indice + 1) / totale) * 100}%` }} />
           </div>
         </header>
+
+        {erroreVerifica && (
+          <p className={styles.avviso} role="status" data-testid="avviso-verifica">
+            {erroreVerifica} Puoi comunque compilare il sondaggio.
+          </p>
+        )}
 
         <form className={styles.form} onSubmit={gestisciInvio}>
           <DomandaCard domanda={domanda} valore={rispostaCorrente} onChange={scegli} />

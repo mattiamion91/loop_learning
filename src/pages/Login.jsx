@@ -80,6 +80,7 @@ export default function Login() {
             value={email}
             onChange={(evento) => setEmail(evento.target.value)}
             required
+            autoFocus
             data-testid="campo-email"
           />
           <Campo

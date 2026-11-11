@@ -22,8 +22,8 @@ Stati delle task (cambiali con `node .agent/loop.mjs task <n> inizia|fatta|error
 - [✔] Pagina `src/pages/Questionario.jsx`: una domanda per schermata, barra di avanzamento (1/5), radio, Avanti/Indietro, validazione della risposta, pulsante Invia
 - [✔] Pagina `src/pages/Grazie.jsx` di ringraziamento mostrata dopo il salvataggio riuscito
 
-## M3 — Flusso "già completato", logout e rifiniture
-- [ ] Modifica al routing di `src/App.jsx` e alla pagina Questionario: se l'utente ha già una risposta salvata, viene portato direttamente a Grazie (solo pagina di ringraziamento)
-- [ ] Header con email del dipendente collegato e pulsante Esci (logout) su tutte le viste autenticate
-- [ ] Stati di caricamento, vuoto ed errore coerenti su tutte le viste asincrone
-- [ ] Accessibilità e rifiniture desktop-first: label sui campi, focus visibile, contrasto AA, spaziature e hover secondo DESIGN.md
+## M3 — Flusso "già completato", logout e rifiniture ✔
+- [✔] Modifica al routing di `src/App.jsx` e alla pagina Questionario: se l'utente ha già una risposta salvata, viene portato direttamente a Grazie (solo pagina di ringraziamento)
+- [✔] Header con email del dipendente collegato e pulsante Esci (logout) su tutte le viste autenticate
+- [✔] Stati di caricamento, vuoto ed errore coerenti su tutte le viste asincrone
+- [✔] Accessibilità e rifiniture desktop-first: label sui campi, focus visibile, contrasto AA, spaziature e hover secondo DESIGN.md
