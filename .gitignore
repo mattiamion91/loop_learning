@@ -1,0 +1,17 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+.agent/state.json
+.agent/tempo.json
+*.tmp
+.agent/lock
+.agent/state.lock
+.agent/*.recovery*
+.agent/approved
+.agent/logs/
+.agent/processes/
+.agent/current-prompt.md
+.env
+.env.*
+!.env.example

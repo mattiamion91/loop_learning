@@ -1,0 +1,83 @@
+.pagina {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: var(--space-8) var(--layout-pad);
+}
+
+.riquadro {
+  width: min(30rem, 100%);
+  padding: var(--space-6);
+  background-color: rgba(10, 22, 40, 0.72);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  animation: entra var(--dur-entry) var(--ease-out) both;
+}
+
+.etichetta {
+  margin-bottom: var(--space-1);
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+}
+
+.sottotitolo {
+  color: var(--color-text-muted);
+}
+
+.form {
+  display: grid;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.errore {
+  margin: 0;
+  font-size: var(--text-small);
+  color: var(--color-error);
+}
+
+.avviso {
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  font-size: var(--text-small);
+  color: var(--color-heading);
+  background-color: rgba(0, 255, 135, 0.08);
+  border: 1px solid rgba(0, 255, 135, 0.35);
+  border-radius: var(--radius-sm);
+}
+
+.cambio {
+  margin: var(--space-4) 0 0;
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+.link {
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--color-focus);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--color-accent);
+}
+
+@keyframes entra {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

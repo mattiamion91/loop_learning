@@ -1,0 +1,11 @@
+{
+  "name": "webapp-loop",
+  "private": true,
+  "description": "Dipendenze del loop (solo Playwright). Non è il package.json dell'app.",
+  "scripts": {
+    "test": "node --test tests/loop.test.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0"
+  }
+}

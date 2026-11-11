@@ -1,0 +1,158 @@
+/* Design token e stili globali — palette "Aurora Boreal Nórdica" (DESIGN.md). */
+
+:root {
+  /* Palette */
+  --aurora-green: #00ff87;
+  --arctic-blue: #0a1628;
+  --frost-white: #e8f4f8;
+  --violet-sky: #7b2fbe;
+  --ice-cyan: #00d4ff;
+  --glacier-pink: #ff6ec7;
+  --snow: #fafbfc;
+  --deep-midnight: #050b1a;
+
+  /* Ruoli semantici */
+  --color-bg: var(--deep-midnight);
+  --color-surface: rgba(232, 244, 248, 0.04);
+  --color-surface-strong: var(--arctic-blue);
+  --color-border: rgba(232, 244, 248, 0.14);
+  --color-text: var(--frost-white);
+  --color-text-muted: rgba(232, 244, 248, 0.68);
+  --color-heading: var(--snow);
+  --color-primary: var(--aurora-green);
+  --color-primary-contrast: var(--violet-sky);
+  --color-accent: var(--glacier-pink);
+  --color-focus: var(--ice-cyan);
+  --color-error: #ff5c7a;
+  --color-success: var(--aurora-green);
+
+  /* Tipografia */
+  --font-sans: 'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Consolas', monospace;
+  --text-hero: clamp(2.5rem, 5vw, 4rem);
+  --text-h1: 2.25rem;
+  --text-h2: 1.5rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+
+  /* Spaziature (base 8px) */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-6: 3rem;
+  --space-8: 4rem;
+  --section-gap: clamp(4rem, 8vw, 8rem);
+
+  /* Forme, bordi e ombre */
+  --radius: 8px;
+  --radius-sm: 0.5rem;
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lift: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+  /* Movimento */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-entry: 480ms;
+  --dur-hover: 200ms;
+
+  /* Livelli (contratto z-index) */
+  --z-base: 0;
+  --z-nav: 100;
+  --z-overlay: 200;
+  --z-modal: 300;
+  --z-toast: 500;
+
+  /* Layout */
+  --layout-max: 1280px;
+  --layout-pad: 1.5rem;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  /* Bagliore aurorale d'atmosfera: resta dietro i contenuti, non è decorazione UI. */
+  background-image:
+    radial-gradient(60rem 40rem at 12% -10%, rgba(0, 255, 135, 0.14), transparent 60%),
+    radial-gradient(50rem 36rem at 88% 0%, rgba(123, 47, 190, 0.18), transparent 62%),
+    radial-gradient(40rem 30rem at 50% 110%, rgba(0, 212, 255, 0.1), transparent 60%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 var(--space-2);
+  color: var(--color-heading);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: var(--text-h1);
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: var(--text-h2);
+}
+
+p {
+  margin: 0 0 var(--space-2);
+  max-width: 72ch;
+}
+
+a {
+  color: var(--color-focus);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--layout-max);
+  margin-inline: auto;
+  padding-inline: var(--layout-pad);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

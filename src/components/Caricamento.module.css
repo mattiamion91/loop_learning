@@ -1,0 +1,34 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  align-items: flex-start;
+}
+
+.scheletro {
+  width: min(28rem, 100%);
+  height: 1rem;
+  border-radius: var(--radius-sm);
+  background-image: linear-gradient(
+    90deg,
+    rgba(232, 244, 248, 0.06) 0%,
+    rgba(232, 244, 248, 0.16) 50%,
+    rgba(232, 244, 248, 0.06) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s var(--ease-out) infinite;
+}
+
+.testo {
+  font-size: var(--text-small);
+  color: var(--color-text-muted);
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}

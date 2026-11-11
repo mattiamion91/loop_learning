@@ -1,0 +1,47 @@
+.primario {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    transform var(--dur-hover) var(--ease-out),
+    box-shadow var(--dur-hover) var(--ease-out),
+    filter var(--dur-hover) var(--ease-out);
+}
+
+.primario:hover:not(:disabled) {
+  filter: brightness(0.92);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-1px) scale(1.01);
+}
+
+.primario:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.fantasma {
+  padding: 0.75rem 1.25rem;
+  background-color: transparent;
+  color: var(--color-primary);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-hover) var(--ease-out),
+    border-color var(--dur-hover) var(--ease-out);
+}
+
+.fantasma:hover:not(:disabled) {
+  background-color: rgba(0, 255, 135, 0.08);
+  border-color: var(--color-primary);
+}
+
+.primario:disabled,
+.fantasma:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

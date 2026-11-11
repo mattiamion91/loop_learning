@@ -1,0 +1,12 @@
+{
+  "active": null,
+  "harnesses": {
+    "claude":   { "cmd": "claude",   "args": ["-p", "{prompt}", "--permission-mode", "acceptEdits", "--allowedTools", "Bash,Edit,Write,Read,Glob,Grep"] },
+    "codex":    { "cmd": "codex",    "args": ["exec", "--full-auto", "{prompt}"] },
+    "gemini":   { "cmd": "gemini",   "args": ["-p", "{prompt}", "--yolo"] },
+    "opencode": { "cmd": "opencode", "args": ["run", "{prompt}"] },
+    "hexagon":  { "cmd": "hexagon",  "args": ["run", "--prompt-file", "{promptFile}", "--yes"], "fatalExitCodes": [2, 4] },
+    "custom":  { "cmd": "my-agent-cli", "args": ["--prompt-file", "{promptFile}"], "stdin": false }
+  },
+  "rateLimitPatterns": ["rate limit", "usage limit", "quota exceeded", "error 429", "status 429", "too many requests", "overloaded", "try again later", "upstream provider", "empty_completion", "empty completion", "provider-side failure", "error 502", "error 503", "bad gateway", "service unavailable"]
+}

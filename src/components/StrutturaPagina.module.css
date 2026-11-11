@@ -1,0 +1,4 @@
+.pagina {
+  min-height: 100dvh;
+  padding-block: var(--space-8);
+}
